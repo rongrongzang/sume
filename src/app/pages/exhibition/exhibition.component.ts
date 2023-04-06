@@ -29,7 +29,6 @@ export class ExhibitionComponent {
     this.onResize();
     this.storeList = this.toArr(mockData.storeList, 17);
     this.storeListM = this.toArr(mockData.storeList, 34); //手机端数据
-    console.log(this.storeList);
   }
   // brandList
   // ngOnInit() 是一个生命周期钩子，Angular 在创建完组件后很快就会调用 ngOnInit()。这里是放置初始化逻辑的好地方。
@@ -39,8 +38,8 @@ export class ExhibitionComponent {
     console.log(item);
   }
   // 查看更多
-  toNext(url: string): void {
-    this.router.navigate([url]);
+  toNext(url: string, key?: number): void {
+    this.router.navigate([url], { queryParams: { key: key } });
   }
   @HostListener('window:resize', ['$event'])
   onResize() {

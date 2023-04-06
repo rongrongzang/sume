@@ -12,6 +12,8 @@ import { NzDrawerModule } from 'ng-zorro-antd/drawer';
 import { NZ_I18N, zh_CN } from 'ng-zorro-antd/i18n';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzPaginationModule } from 'ng-zorro-antd/pagination';
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -54,7 +56,9 @@ registerLocaleData(zh);
     NzInputModule,
     NzButtonModule,
     NzCarouselModule,
+    NzPaginationModule,
     NzDrawerModule,
+    NzTabsModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent],

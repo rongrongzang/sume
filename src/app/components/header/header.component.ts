@@ -18,13 +18,11 @@ export class HeaderComponent implements OnInit {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.routeUrl = event.url === '/' ? '/exhibition-component' : event.url;
-        console.log(this.routeUrl);
       }
     });
   }
   ngOnInit(): void {}
   switchRoute(url: string, openType: number | null): void {
-    console.log(this.routeUrl);
     if (openType === 1) {
       this.router.navigate([url]);
     } else if (openType === null) {

@@ -1,0 +1,220 @@
+.tabBox {
+  max-width: 14rem;
+  background: url(https://cdn.sumecdtx.com/dtx_exhibition/assets/storeProducts/storeBg.png) 100% 100% no-repeat;
+  position: relative;
+  padding: 0 0.2rem;
+  margin: 0 auto;
+}
+.flexCenter {
+  display: flex;
+  align-items: center;
+}
+.flexCenter2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.noticeShow {
+  max-width: 14rem;
+  font-size: 0.14rem;
+  font-variant: tabular-nums;
+  line-height: 1.6;
+  padding: 0.2rem;
+  margin: 0 auto;
+}
+.redText {
+  color: #e40101;
+}
+.zanIcon {
+  width: 0.54rem;
+  height: 0.22rem;
+  position: absolute;
+  right: 0.15rem;
+  top: 0.15rem;
+  z-index: 100;
+}
+// 展商
+.brand {
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .item {
+    width: calc(33.3% - 0.14rem);
+    box-sizing: border-box;
+    border: 1px solid #e0e0e0;
+    position: relative;
+    margin: 0.08rem;
+    padding: 0.2rem;
+    background: linear-gradient(88deg, #f6f8ff 0%, rgba(255, 255, 255, 0.2) 100%);
+    z-index: 100;
+  }
+  .item:nth-child(3n) {
+    margin-right: 0;
+  }
+  .bannerImg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    filter: blur(2px);
+    opacity: 0.5;
+  }
+  .mainStyle {
+    position: relative;
+    z-index: 100;
+  }
+  .title {
+    line-height: 0.4rem;
+    font-size: 0.18rem;
+    font-weight: 700;
+    color: #333;
+  }
+  .subTitle {
+    height: 0.4rem;
+    line-height: 0.4rem;
+    font-size: 0.154rem;
+    color: #888;
+    font-weight: 400;
+    letter-spacing: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    overflow: hidden;
+  }
+  .countryStyle {
+    font-size: 0.14rem;
+    font-weight: 400;
+    color: #666;
+    margin-right: 0.12rem;
+  }
+  .lineH4 {
+    line-height: 0.4rem;
+  }
+  .addressIcon {
+    width: 0.18rem;
+    height: 0.16rem;
+    margin: 0 0.04rem;
+  }
+  .addressP {
+    font-size: 0.15rem;
+    font-weight: 700;
+    color: #fb630b;
+  }
+  .btnBox {
+    display: flex;
+    .btnStyle {
+      border-radius: 0.165rem;
+      margin-right: 0.1rem;
+      font-size: 0.1rem;
+      font-weight: 700;
+      padding: 0.033rem 0.1rem 0.044rem;
+      cursor: no-drop;
+      border: 1px solid #888;
+      color: #888;
+    }
+  }
+}
+// 热门商品
+.hotProducts {
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .item {
+    width: calc(33.3% - 0.14rem);
+    box-sizing: border-box;
+    border: 1px solid #e0e0e0;
+    position: relative;
+    background: #f4f5f7;
+    margin: 0.08rem;
+    padding: 0.16rem;
+    .itemMain {
+      display: flex;
+      .itemImg {
+        height: 0.95rem;
+        width: 1.7rem;
+        margin-right: 0.1rem;
+      }
+      .itemLeft {
+        width: calc(100% - 1.8rem);
+        color: #333;
+        font-size: 0.14rem;
+        letter-spacing: 0;
+        font-weight: 400;
+        .icon {
+          width: 0.18rem;
+          height: 0.18rem;
+          margin-right: 0.04rem;
+        }
+        .storeIcon {
+          width: 0.24rem;
+          height: 0.24rem;
+          border-radius: 100%;
+        }
+        .tetx1 {
+          color: #666;
+          font-weight: 600;
+        }
+        .tetx2 {
+          color: rgba(23, 26, 29, 0.6);
+          margin: 0.12rem 0;
+        }
+        .mb {
+          margin-bottom: 0.12rem;
+        }
+      }
+    }
+  }
+  .item:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 960px) {
+  .noticeShow {
+    color: #999;
+  }
+  .hotProducts {
+    .item {
+      width: calc(50% - 0.24rem);
+      margin: 0.16rem;
+      padding: 0.28rem;
+      .itemMain {
+        display: block;
+        .itemImg {
+          height: 3.375rem;
+          width: 100%;
+          margin: 0 0 0.3rem 0;
+        }
+        .itemLeft {
+          width: 100%;
+          .icon {
+            margin-right: 0.2rem;
+            width: 0.44rem;
+            height: 0.44rem;
+          }
+          .tetx2 {
+            display: none;
+          }
+          .mb {
+            margin: 0.24rem 0;
+          }
+        }
+      }
+    }
+    .item:nth-child(3n) {
+      margin: 0.16rem;
+    }
+    .item:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
+  .zanIcon {
+    width: 1.44rem;
+    height: 0.6rem;
+    top: 0.5rem;
+    right: 0.28rem;
+  }
+}
