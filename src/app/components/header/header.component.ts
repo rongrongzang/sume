@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 import { mockData } from '../../../mock/data';
 import { I18n } from '../../i18n';
 
@@ -8,29 +8,33 @@ import { I18n } from '../../i18n';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.less'],
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   @Input() screenWidth = 0;
+  public visible: boolean = false;
   headerObj = mockData.header;
   searchKey?: String;
   routeUrl?: String;
-  constructor(private router: Router) {}
-
+  constructor(private router: Router) {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.routeUrl = event.url === '/' ? '/exhibition-component' : event.url;
+        console.log(this.routeUrl);
+      }
+    });
+  }
+  ngOnInit(): void {}
   switchRoute(url: string, openType: number | null): void {
-    this.routeUrl = url;
+    console.log(this.routeUrl);
     if (openType === 1) {
-      let _url =
-        url
-          .split('/')[2]
-          .split('.')[0]
-          .replace(/[A-Z]/g, (str) => {
-            return '-' + str.toLowerCase();
-          }) + '-component';
-      this.router.navigate(['/' + _url]);
+      this.router.navigate([url]);
     } else if (openType === null) {
       window.open(url, '_blank');
     }
   }
-
+  // visible控制菜单的显示与隐藏 - 数据双向绑定@input\@output
+  switchMenu() {
+    this.visible = !this.visible;
+  }
   public changeLanguage() {
     I18n.setLanguage();
   }

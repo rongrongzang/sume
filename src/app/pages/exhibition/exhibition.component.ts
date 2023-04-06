@@ -1,7 +1,9 @@
 import { Component, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 import { mockData } from '../../../mock/data';
 
 enum ScreenSize {
+  mini = 1000,
   small = 1200,
   medium = 1400,
   large = 1600,
@@ -23,7 +25,7 @@ export class ExhibitionComponent {
   public brandList: any[] = [];
   public ulWidth: number = 0;
 
-  constructor() {
+  constructor(private router: Router) {
     this.onResize();
     this.storeList = this.toArr(mockData.storeList, 17);
     this.storeListM = this.toArr(mockData.storeList, 34); //手机端数据
@@ -31,10 +33,14 @@ export class ExhibitionComponent {
   }
   // brandList
   // ngOnInit() 是一个生命周期钩子，Angular 在创建完组件后很快就会调用 ngOnInit()。这里是放置初始化逻辑的好地方。
-  ngOnInit(): void {}
-
-  toNext(item: object): void {
+  // ngOnInit(): void {}
+  //详情
+  toDetail(item: object): void {
     console.log(item);
+  }
+  // 查看更多
+  toNext(url: string): void {
+    this.router.navigate([url]);
   }
   @HostListener('window:resize', ['$event'])
   onResize() {
@@ -48,6 +54,10 @@ export class ExhibitionComponent {
       size = 8;
     } else if (window.innerWidth > ScreenSize.small) {
       size = 7;
+    } else if (window.innerWidth > ScreenSize.mini) {
+      size = 6;
+    } else {
+      size = 5;
     }
     let _size = size * 3;
     this.brandList = this.toArr(mockData.brandList, _size);

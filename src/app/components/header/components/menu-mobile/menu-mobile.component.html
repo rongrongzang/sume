@@ -1,0 +1,31 @@
+<div>
+  <nz-drawer
+    nzWidth="8rem"
+    [nzClosable]="false"
+    [nzVisible]="visible"
+    nzPlacement="right"
+    (nzOnClose)="switchMenu(false)"
+  >
+    <ng-container *nzDrawerContent>
+      <div class="imgBox">
+        <img
+          class="logoImg"
+          src="https://cdn.sumecdtx.com/exhibition/2023/02/27/9497b53fcc9943d6adf527ff2b583dea"
+          alt=""
+        />
+      </div>
+      <ul class="menusList">
+        <li *ngFor="let item of headerObj.menuResList" class="mobileLi">
+          <button
+            nz-button
+            nzType="text"
+            [ngClass]="['text', routeUrl === item.menuRoute ? 'selected' : '']"
+            (click)="switchRoute(item.menuRoute, item.openType)"
+          >
+            {{ item.menuName }}
+          </button>
+        </li>
+      </ul>
+    </ng-container>
+  </nz-drawer>
+</div>

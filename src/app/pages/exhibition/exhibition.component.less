@@ -18,14 +18,17 @@
     }
   }
   .content {
-    padding: 0.1rem;
+    padding: 0.3rem;
+    overflow: hidden;
+    .moreBox {
+      margin-bottom: 0.16rem;
+    }
     .title {
       font-size: 0.27rem;
       color: #333;
       letter-spacing: 0;
       font-weight: 600;
       text-align: center;
-      padding-bottom: 0.16rem;
     }
     .more {
       font-size: 0.14rem;
@@ -33,7 +36,8 @@
       letter-spacing: 0;
       font-weight: 400;
       text-align: center;
-      margin-bottom: 0.16rem;
+      margin: 0.18rem 0;
+      cursor: pointer;
     }
     .despTitle {
       font-size: 0.2rem;
@@ -209,11 +213,11 @@
         }
       }
       .zanIcon {
-        width: 1.44rem;
-        height: 0.6rem;
+        width: 0.54rem;
+        height: 0.22rem;
         position: absolute;
-        top: 0.3rem;
-        right: 0.28rem;
+        right: 0.15rem;
+        top: 0.15rem;
       }
     }
     .item:nth-child(3n) {
@@ -224,7 +228,7 @@
   .brand {
     width: 100%;
     height: 8rem;
-    padding: 0.15rem 0 0.2rem;
+    padding-bottom: 0.2rem;
     background-image: url(https://cdn.sumecdtx.com/dtx_exhibition/assets/index/brandWallBg.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -267,10 +271,23 @@
   overflow: hidden;
   word-break: break-all;
 }
-
 // 分辨率960px以下
 @media screen and (max-width: 960px) {
   .exhibition {
+    .content {
+      .moreBox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin: 0.3rem 0.3rem 0.4rem 0.3rem;
+      }
+      .more {
+        position: absolute;
+        right: 0.2rem;
+        margin: 0;
+      }
+    }
     .messageItem {
       display: none;
     }
@@ -339,6 +356,12 @@
               margin: 0.24rem 0;
             }
           }
+        }
+        .zanIcon {
+          width: 1.44rem;
+          height: 0.6rem;
+          top: 0.3rem;
+          right: 0.28rem;
         }
       }
       .item:nth-child(3n) {

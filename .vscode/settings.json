@@ -4,5 +4,6 @@
   "editor.codeActionsOnSave": {
     "source.organizeImports": true,
     "source.fixAll": true
-  }
+  },
+  "svn.ignoreMissingSvnWarning": true
 }

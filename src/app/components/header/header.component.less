@@ -8,9 +8,11 @@
   font-weight: 400;
   z-index: 1000;
   background: #fff;
-  position: sticky;
   box-shadow: 0 0.02rem 0.08rem rgba(110, 38, 0, 0.1);
+  position: fixed;
   top: 0px;
+  left: 0;
+  right: 0;
   .leftBox {
     display: flex;
     align-items: center;
@@ -57,6 +59,45 @@
       border-radius: 0.18rem;
     }
   }
+}
+
+.mobileMain {
+  height: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  background: #fff;
+  box-shadow: 0 0.02rem 0.08rem rgba(110, 38, 0, 0.1);
+  padding: 0 0.78rem;
+  position: fixed;
+  top: 0px;
+  left: 0;
+  right: 0;
+  .mainItem {
+    width: 33.3%;
+  }
+  .enImg {
+    width: 1rem;
+    height: 1rem;
+  }
+  .logoImg {
+    height: 1.082rem;
+    margin-right: 0.2rem;
+  }
+  .iconImg {
+    width: 0.65rem;
+    height: 0.65rem;
+    color: #666;
+  }
+  .iconImg:first-child {
+    margin-right: 1rem;
+  }
+}
+.displayCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .ant-btn {
   padding: 0;

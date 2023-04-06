@@ -20,19 +20,4 @@ export class AppComponent {
   onResize(event: object) {
     this.screenWidth = window.innerWidth;
   }
-  switchRoute(url: string, openType: number | null): void {
-    this.routeUrl = url;
-    if (openType === 1) {
-      let _url =
-        url
-          .split('/')[2]
-          .split('.')[0]
-          .replace(/[A-Z]/g, (str) => {
-            return '-' + str.toLowerCase();
-          }) + '-component';
-      this.router.navigate(['/' + _url]);
-    } else if (openType === null) {
-      window.open(url, '_blank');
-    }
-  }
 }

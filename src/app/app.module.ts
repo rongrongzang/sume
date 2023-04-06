@@ -8,12 +8,14 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
+import { NzDrawerModule } from 'ng-zorro-antd/drawer';
 import { NZ_I18N, zh_CN } from 'ng-zorro-antd/i18n';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { MenuMobileComponent } from './components/header/components/menu-mobile/menu-mobile.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SideBoxsComponent } from './components/side-boxs/side-boxs.component';
 import { BusinessListComponent } from './pages/business-list/business-list.component';
@@ -40,6 +42,7 @@ registerLocaleData(zh);
     FooterComponent,
     SideBoxsComponent,
     TranslatePipe,
+    MenuMobileComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +54,7 @@ registerLocaleData(zh);
     NzInputModule,
     NzButtonModule,
     NzCarouselModule,
+    NzDrawerModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent],
