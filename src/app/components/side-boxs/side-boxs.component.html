@@ -1,0 +1,12 @@
+<div class="sideBoxs">
+  <ul class="sideList">
+    <li *ngFor="let item of sideList">
+      <img
+        [class]="screenWidth > 960 ? 'icon' : 'iconM'"
+        [src]="screenWidth > 960 ? item.url : item.urlM"
+        alt="logo"
+        (click)="switchSide(item)"
+      />
+    </li>
+  </ul>
+</div>

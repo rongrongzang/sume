@@ -1,0 +1,114 @@
+<div class="exhibition">
+  <img class="topImg" [src]="headerObj.dynamicConfigures.exhibition_meet_index_banner.bannerImage" alt="" />
+  <div class="messageItem">
+    <img class="icon" src="https://cdn.sumecdtx.com/dtx_exhibition/assets/index/indexMessage.png" alt="" />
+    <span class="text">景气面继续扩大，2月份制造业PMI升至52.6%</span>
+  </div>
+  <div class="content productAndStoreHead">
+    <div class="title">品牌名录</div>
+    <div class="more">查看更多</div>
+    <div class="mobileUl">
+      <ul *ngIf="screenWidth > 960; else elseBlock" class="list">
+        <li *ngFor="let arr of storeList" class="item">
+          <nz-carousel nzAutoPlay nzDotPosition="right" nzEffect="flip" [nzDots]="false">
+            <div nz-carousel-content *ngFor="let item of arr" class="bgItem">
+              <img [src]="item.logoUrl ? item.logoUrl : '../../../assets/nodata.svg'" alt="logo" />
+              <div>
+                <div class="text">{{ item.brandName }}</div>
+                <div class="subText">{{ item.countryName }}</div>
+              </div>
+            </div>
+          </nz-carousel>
+        </li>
+      </ul>
+      <ng-template #elseBlock>
+        <ul>
+          <li *ngFor="let arr of storeListM" class="item">
+            <ul class="list">
+              <li *ngFor="let item of arr" class="item" [style]="'width:' + screenWidth / 2 + 'px'" class="bgItem">
+                <img [src]="item.logoUrl ? item.logoUrl : '../../../assets/nodata.svg'" alt="logo" />
+                <div>
+                  <div class="text">{{ item.brandName }}</div>
+                  <div class="subText">{{ item.countryName }}</div>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </ng-template>
+    </div>
+  </div>
+  <div class="content tv">
+    <div class="title">直播</div>
+    <div class="more">查看更多</div>
+    <div>
+      <ul class="tvList">
+        <li *ngFor="let item of tvList" class="tvItem" (click)="toNext(item)">
+          <div class="liveTag">
+            <img src="https://cdn.sumecdtx.com/dtx_exhibition/assets/index/living.svg" class="liveTagImg" alt="" />
+            <div class="num">{{ item.cumulativeViewersNum }}</div>
+          </div>
+          <img class="bannerImg" [src]="item.roomBanner" alt="banner" />
+          <div class="textBox">
+            <div class="text ellipsisShow">
+              {{ item.content }}
+            </div>
+            <img src="https://cdn.sumecdtx.com/dtx_exhibition/assets/index/liveHot.svg" alt="" />
+          </div>
+          <div>
+            <img class="icon" [src]="item.relationOrgLogo" alt="logo" />
+            <span class="subText"> {{ item.relationOrgName }}</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="content hotProducts">
+    <div class="title">热门商品</div>
+    <div class="more">查看更多</div>
+    <ul class="list">
+      <li *ngFor="let item of hotProductsList" class="item">
+        <div class="itemMain">
+          <img class="itemImg" [src]="item.headImg" alt="logo" />
+          <div class="itemLeft">
+            <div class="tetx1 ellipsisShow">
+              <img
+                class="icon"
+                src="https://cdn.sumecdtx.com/dtx_exhibition/assets/storeProducts/onlive.gif"
+                alt="logo"
+              />{{ item.productName }}
+            </div>
+            <div class="tetx2 ellipsisShow">
+              <img class="storeIcon" [src]="item.storeLogo" alt="logo" />{{ item.storeName }}
+            </div>
+            <div class="ellipsisShow mb">国别：{{ item.countryName }}</div>
+            <div class="ellipsisShow">品牌名称：{{ item.brandName }}</div>
+          </div>
+        </div>
+        <img
+          class="zanIcon"
+          src="https://cdn.sumecdtx.com/dtx_exhibition/assets/public/mobileNotFollowIcon.png"
+          alt="logo"
+        />
+      </li>
+    </ul>
+  </div>
+  <div class="content brand">
+    <div class="title">参展商名录</div>
+    <div class="more">查看更多</div>
+    <div class="despTitle">—— 排名不分先后 ——</div>
+    <nz-carousel nzEffect="scrollx" [nzLoop]="false">
+      <div nz-carousel-content *ngFor="let itemArr of brandList">
+        <div class="carouselBox">
+          <ul class="list" [style]="'width:' + ulWidth + 'rem'">
+            <li *ngFor="let item of itemArr">
+              <div class="brandImg">
+                <img [src]="item.logoUrl" alt="logo" (click)="toNext(item)" />
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nz-carousel>
+  </div>
+</div>
