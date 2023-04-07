@@ -1,0 +1,11 @@
+<div>
+  <nz-modal nzCentered nzWidth="360px" [(nzVisible)]="isVisible" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+    <ng-container *nzModalContent>
+      <div class="title">
+        <img class="icon" src="../../../assets/mark.svg" alt="" />
+        <span>提示</span>
+      </div>
+      <div class="subTitle">请先登录</div>
+    </ng-container>
+  </nz-modal>
+</div>

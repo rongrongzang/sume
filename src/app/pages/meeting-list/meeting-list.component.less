@@ -1,0 +1,88 @@
+.meetMain {
+  background: url(https://cdn.sumecdtx.com/dtx_exhibition/assets/live/live_bg.png) no-repeat;
+  .tabMain {
+    max-width: 1480px;
+    margin: 0 auto;
+  }
+  .meetList {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 0.2rem;
+    .meetItem {
+      width: calc(33.3% - 0.12rem);
+      background: #fff;
+      box-shadow: 0 0 0.08rem rgba(0, 0, 0, 0.08);
+      margin: 0 0.18rem 0.18rem 0;
+      .itemBox {
+        padding: 0.2rem 0.2rem 0px;
+        background-image: url(https://cdn.sumecdtx.com/dtx_exhibition/assets/meet/meetItemBg.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center center;
+      }
+      .timeStyle {
+        font-size: 0.2rem;
+        color: #333;
+        font-weight: 700;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .overBtn {
+          color: #fff;
+          font-size: 0.14rem;
+          padding: 0.06rem 0.18rem;
+          border-radius: 50px;
+          background: linear-gradient(90deg, #b7b7b7 0%, #8c8c8c 100%);
+        }
+      }
+      .title {
+        font-size: 0.16rem;
+        color: #333;
+        font-weight: 700;
+        margin-bottom: 0.18rem;
+      }
+      .subTitle {
+        color: #666;
+        margin-bottom: 0.2rem;
+      }
+      .margin12 {
+        margin: 0.12rem 0;
+      }
+      .icon {
+        width: 0.2rem;
+        height: 0.2rem;
+        border-radius: 100%;
+        margin-right: 0.07rem;
+      }
+      .btns {
+        display: flex;
+        text-align: center;
+        font-size: 0.14rem;
+        font-weight: 400;
+        color: #e40101;
+        font-weight: 700;
+        letter-spacing: 0;
+        .btnStyle {
+          width: 50%;
+          cursor: pointer;
+          padding: 0.15rem 0;
+          background: url(https://cdn.sumecdtx.com/dtx_exhibition/assets/storeProducts/productButtonBg.png) 100% 100%
+            no-repeat;
+          background-position: center center;
+        }
+      }
+    }
+    .meetItem:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+}
+
+::ng-deep .ant-tabs-nav-wrap {
+  flex: 1;
+}
+::ng-deep .ant-tabs > .ant-tabs-nav .ant-tabs-nav-list,
+.ant-tabs > div > .ant-tabs-nav .ant-tabs-nav-list {
+  width: 100%;
+  justify-content: space-around;
+}

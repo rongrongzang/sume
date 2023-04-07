@@ -12,6 +12,7 @@ import { NzDrawerModule } from 'ng-zorro-antd/drawer';
 import { NZ_I18N, zh_CN } from 'ng-zorro-antd/i18n';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +21,7 @@ import { FooterDescriptionComponent } from './components/footer-description/foot
 import { FooterComponent } from './components/footer/footer.component';
 import { MenuMobileComponent } from './components/header/components/menu-mobile/menu-mobile.component';
 import { HeaderComponent } from './components/header/header.component';
+import { IfLoginModalComponent } from './components/if-login-modal/if-login-modal.component';
 import { SideBoxsComponent } from './components/side-boxs/side-boxs.component';
 import { BusinessListComponent } from './pages/business-list/business-list.component';
 import { ExhibitionComponent } from './pages/exhibition/exhibition.component';
@@ -47,6 +49,7 @@ registerLocaleData(zh);
     TranslatePipe,
     MenuMobileComponent,
     FooterDescriptionComponent,
+    IfLoginModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,6 +64,7 @@ registerLocaleData(zh);
     NzPaginationModule,
     NzDrawerModule,
     NzTabsModule,
+    NzModalModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent],

@@ -1,4 +1,50 @@
-<div>
+<div class="live">
+  <!-- 头部 video -->
+  <div class="liveHead">
+    <div class="black_bg">
+      <div class="textBox">进入直播间</div>
+    </div>
+  </div>
+  <!-- tab内容区域 -->
+  <div class="liveMain">
+    <nz-tabset nzCentered [(nzSelectedIndex)]="selectedTab">
+      <nz-tab [nzTitle]="lives.time" *ngFor="let lives of tabList">
+        <div class="liveList">
+          <div *ngFor="let item of lives.lives" class="livItem" (click)="toDetail(item.platformRoomNo)">
+            <div class="liveRoom">
+              <div class="roomBanner">
+                <img [src]="item.roomBanner" alt="" class="img" />
+              </div>
+              <div class="roomText">
+                <div class="ellipsisShow">{{ item.content }}</div>
+                <div class="ellipsisShow">
+                  <img class="logo" [src]="item.relationOrgLogo" alt="logo" />
+                  <span class="text ellipsisShow">{{ item.relationOrgName }}</span>
+                </div>
+                <div class="mobileBtns">
+                  <div class="ellipsisShow textM">{{ item.startTimeStr }}</div>
+                  <div class="btn3M">订阅</div>
+                </div>
+              </div>
+            </div>
+            <div class="liveInfo">
+              <div class="btns">
+                <div [class]="item.isLiving == 1 ? 'btn1 isLiving' : 'btn1 '">
+                  {{ item.isLiving == 1 ? '正在直播' : '直播预告' }}
+                </div>
+                <div class="btn2" *ngIf="item.relationType == 2">回放</div>
+              </div>
+              <div class="textBox">
+                <div class="textF ellipsisShow">{{ item.roomTitle }}</div>
+                <div class="textF ellipsisShow">{{ item.startTimeStr }}</div>
+                <div class="btn3">订阅</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nz-tab>
+    </nz-tabset>
+  </div>
   <app-footer-description>
     <div>
       <div>观看须知 ：</div>

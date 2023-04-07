@@ -17,4 +17,9 @@ export class BusinessListComponent {
   constructor(private route: ActivatedRoute) {
     this.selectedTab = this.route.snapshot.queryParams['key'];
   }
+  toDetail(exhibitorNo: string, storeNo: string) {
+    window.open(
+      `https://expo.sumecdtx.com/pages/businessDetail.html?exhibitionMeetNo=${exhibitorNo}&storeNo=${storeNo}`
+    );
+  }
 }

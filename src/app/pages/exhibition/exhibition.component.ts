@@ -6,8 +6,6 @@ enum ScreenSize {
   mini = 1000,
   small = 1200,
   medium = 1400,
-  large = 1600,
-  mlarge = 2000,
 }
 
 @Component({
@@ -45,11 +43,7 @@ export class ExhibitionComponent {
   onResize() {
     this.screenWidth = window.innerWidth;
     let size = 6;
-    if (window.innerWidth > ScreenSize.mlarge) {
-      size = 10;
-    } else if (window.innerWidth > ScreenSize.large) {
-      size = 9;
-    } else if (window.innerWidth > ScreenSize.medium) {
+    if (window.innerWidth > ScreenSize.medium) {
       size = 8;
     } else if (window.innerWidth > ScreenSize.small) {
       size = 7;

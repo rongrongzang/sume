@@ -1,10 +1,6 @@
 @mainColor: #e40101;
 .pcMain {
   height: 0.8rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-right: 0.5rem;
   font-weight: 400;
   z-index: 1000;
   background: #fff;
@@ -13,6 +9,13 @@
   top: 0px;
   left: 0;
   right: 0;
+  .pcBox {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 0.5rem;
+  }
   .leftBox {
     display: flex;
     align-items: center;
@@ -101,4 +104,10 @@
 }
 .ant-btn {
   padding: 0;
+}
+@media screen and (min-width: 960px) {
+  .pcBox {
+    max-width: 1480px;
+    margin: 0 auto;
+  }
 }

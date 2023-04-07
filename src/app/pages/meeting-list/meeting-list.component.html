@@ -1,1 +1,45 @@
-<p>meeting-list works!</p>
+<!-- tab内容区域 -->
+<div class="meetMain">
+  <nz-tabset nzCentered [(nzSelectedIndex)]="selectedTab" class="tabMain">
+    <nz-tab [nzTitle]="tab.time" *ngFor="let tab of tabList">
+      <div class="meetList">
+        <div *ngFor="let item of tab.meets" class="meetItem">
+          <div class="itemBox">
+            <div class="timeStyle">
+              <div>
+                <span>{{ item.startTimeStr }} </span> - <span>{{ item.endTimeStr }}</span>
+              </div>
+              <div class="overBtn">已结束</div>
+            </div>
+            <div class="title ellipsisShow">{{ item.meetName }}</div>
+            <div class="subTitle ellipsisShow">{{ item.content }}</div>
+            <div class="ellipsisShow">
+              <img class="icon" [src]="item.relationOrgLogo" alt="" />
+              <span>{{ item.relationOrgName }}</span>
+            </div>
+            <div class="margin12">
+              <img class="icon" src="https://cdn.sumecdtx.com/dtx_exhibition/assets/meet/meetType1.png" alt="" />
+              <span>{{ item.isNeedPassword ? '私密洽谈室' : '公开洽谈室' }}</span>
+            </div>
+          </div>
+          <div class="btns" (click)="toLogin()">
+            <div class="btnStyle">进入洽谈室</div>
+            <div class="btnStyle">订阅洽谈室</div>
+          </div>
+        </div>
+      </div>
+    </nz-tab>
+  </nz-tabset>
+</div>
+<app-footer-description>
+  <div>
+    <div>特别提示：</div>
+    <div>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      苏美达数字会展平台（以下简称会展平台）以非盈利目的免费提供线上展客商洽谈间服务，其中有关参展商及其产品或服务的信息，均由会展平台参展商提供并由其对相关内容的真实性、准确性及合法性负责，会展平台仅负责收集、整理并发布，对其中内容不承担法律责任，请您自行甄别。
+      如您发现存在相关信息不真实、不准确或涉嫌违法违规的情况，请及时联系会展平台或相关行政主管部分进行举报，对于反映至会展平台的相关信息，我们将依照相关法律规定提醒相关单位整改。我们的联系方式：。
+      <span class="redText">T-world@sumec.com.cn</span>。
+    </div>
+  </div>
+</app-footer-description>
+<app-if-login-modal #loginModal></app-if-login-modal>
