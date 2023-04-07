@@ -76,6 +76,20 @@
       margin-right: 0;
     }
   }
+  .nodataBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 60%;
+      max-width: 100px;
+    }
+    .noDataP {
+      color: #666;
+      margin-bottom: 0.6rem;
+    }
+  }
 }
 
 ::ng-deep .ant-tabs-nav-wrap {
@@ -85,4 +99,32 @@
 .ant-tabs > div > .ant-tabs-nav .ant-tabs-nav-list {
   width: 100%;
   justify-content: space-around;
+}
+
+@media screen and (max-width: 960px) {
+  .meetMain {
+    .meetList {
+      .meetItem {
+        width: 100%;
+        border: 1px solid #79acde;
+        margin: 0 0.3rem 0.4rem 0.2rem;
+        .timeStyle {
+          font-size: 0.58rem;
+          .overBtn {
+            font-size: 0.38rem;
+            padding: 0.1rem 0.3rem;
+          }
+        }
+        .title {
+          font-size: 0.42rem;
+        }
+        .btns {
+          font-size: 0.38rem;
+        }
+      }
+      .meetItem:nth-child(3n) {
+        margin: 0 0.3rem 0.4rem 0.2rem;
+      }
+    }
+  }
 }

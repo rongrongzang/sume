@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { NzMessageService } from 'ng-zorro-antd/message';
 import { mockData } from '../../../mock/data';
 
 @Component({
@@ -14,12 +15,19 @@ export class BusinessListComponent {
   public current: number = 1;
   public total: number = 338;
   public selectedTab: number = 0;
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private message: NzMessageService) {
     this.selectedTab = this.route.snapshot.queryParams['key'];
   }
-  toDetail(exhibitorNo: string, storeNo: string) {
-    window.open(
-      `https://expo.sumecdtx.com/pages/businessDetail.html?exhibitionMeetNo=${exhibitorNo}&storeNo=${storeNo}`
-    );
+  toMore() {
+    this.message.create('error', `抱歉，数据建设中...`);
+    // window.open(
+    //   `https://expo.sumecdtx.com/pages/businessDetail.html?exhibitionMeetNo=${exhibitorNo}&storeNo=${storeNo}`
+    // );
+  }
+  toDetail(brandName: string) {
+    this.message.create('error', `抱歉，“${brandName}”详情页,建设中...`);
+    // window.open(
+    //   `https://expo.sumecdtx.com/pages/businessDetail.html?exhibitionMeetNo=${exhibitorNo}&storeNo=${storeNo}`
+    // );
   }
 }

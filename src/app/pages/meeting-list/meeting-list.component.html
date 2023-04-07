@@ -2,32 +2,40 @@
 <div class="meetMain">
   <nz-tabset nzCentered [(nzSelectedIndex)]="selectedTab" class="tabMain">
     <nz-tab [nzTitle]="tab.time" *ngFor="let tab of tabList">
-      <div class="meetList">
-        <div *ngFor="let item of tab.meets" class="meetItem">
-          <div class="itemBox">
-            <div class="timeStyle">
-              <div>
-                <span>{{ item.startTimeStr }} </span> - <span>{{ item.endTimeStr }}</span>
+      <div *ngIf="tab.meets.length > 0; else elseBlock">
+        <div class="meetList">
+          <div *ngFor="let item of tab.meets" class="meetItem">
+            <div class="itemBox">
+              <div class="timeStyle">
+                <div>
+                  <span>{{ item.startTimeStr }} </span> - <span>{{ item.endTimeStr }}</span>
+                </div>
+                <div class="overBtn">已结束</div>
               </div>
-              <div class="overBtn">已结束</div>
+              <div class="title ellipsisShow">{{ item.meetName }}</div>
+              <div class="subTitle ellipsisShow">{{ item.content }}</div>
+              <div class="ellipsisShow">
+                <img class="icon" [src]="item.relationOrgLogo" alt="" />
+                <span>{{ item.relationOrgName }}</span>
+              </div>
+              <div class="margin12">
+                <img class="icon" src="https://cdn.sumecdtx.com/dtx_exhibition/assets/meet/meetType1.png" alt="" />
+                <span>{{ item.isNeedPassword ? '私密洽谈室' : '公开洽谈室' }}</span>
+              </div>
             </div>
-            <div class="title ellipsisShow">{{ item.meetName }}</div>
-            <div class="subTitle ellipsisShow">{{ item.content }}</div>
-            <div class="ellipsisShow">
-              <img class="icon" [src]="item.relationOrgLogo" alt="" />
-              <span>{{ item.relationOrgName }}</span>
+            <div class="btns" (click)="toLogin()">
+              <div class="btnStyle">进入洽谈室</div>
+              <div class="btnStyle">订阅洽谈室</div>
             </div>
-            <div class="margin12">
-              <img class="icon" src="https://cdn.sumecdtx.com/dtx_exhibition/assets/meet/meetType1.png" alt="" />
-              <span>{{ item.isNeedPassword ? '私密洽谈室' : '公开洽谈室' }}</span>
-            </div>
-          </div>
-          <div class="btns" (click)="toLogin()">
-            <div class="btnStyle">进入洽谈室</div>
-            <div class="btnStyle">订阅洽谈室</div>
           </div>
         </div>
       </div>
+      <ng-template #elseBlock>
+        <div class="nodataBox">
+          <img src="../../../assets/nodata.svg" alt="" />
+          <div class="noDataP">暂无数据</div>
+        </div>
+      </ng-template>
     </nz-tab>
   </nz-tabset>
 </div>

@@ -1,5 +1,13 @@
 <div class="exhibition">
-  <img class="topImg" [src]="headerObj.dynamicConfigures.exhibition_meet_index_banner.bannerImage" alt="" />
+  <img
+    *ngIf="screenWidth > 960; else topImgM"
+    class="topImg"
+    [src]="headerObj.dynamicConfigures.exhibition_meet_index_banner.bannerImage"
+    alt=""
+  />
+  <ng-template #topImgM>
+    <img class="topImg" [src]="headerObj.dynamicConfigures.exhibition_meet_index_banner_mobile.bannerImage" alt="" />
+  </ng-template>
   <div class="messageItem">
     <img class="icon" src="https://cdn.sumecdtx.com/dtx_exhibition/assets/index/indexMessage.png" alt="" />
     <span class="text">景气面继续扩大，2月份制造业PMI升至52.6%</span>

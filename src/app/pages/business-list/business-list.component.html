@@ -4,7 +4,7 @@
       <nz-tab nzTitle="品牌">
         <div class="brand">
           <ul class="list">
-            <li *ngFor="let item of storeList" class="item" (click)="toDetail(item.exhibitorNo, item.storeNo)">
+            <li *ngFor="let item of storeList" class="item" (click)="toDetail(item.brandName)">
               <img [src]="item.banner" alt="banner" class="bannerImg" />
               <div class="mainStyle">
                 <div class="title ellipsisShow">
@@ -37,7 +37,7 @@
       <nz-tab nzTitle="展商">
         <div class="brand">
           <ul class="list">
-            <li *ngFor="let item of brandList" class="item">
+            <li *ngFor="let item of brandList" class="item" (click)="toDetail(item.storeName)">
               <img [src]="item.banner" alt="banner" class="bannerImg" />
               <div class="mainStyle">
                 <div class="title ellipsisShow">
@@ -63,7 +63,7 @@
       <nz-tab nzTitle="展品">
         <div class="hotProducts">
           <ul class="list">
-            <li *ngFor="let item of hotProductsList" class="item">
+            <li *ngFor="let item of hotProductsList" class="item" (click)="toDetail(item.brandName)">
               <div class="itemMain">
                 <img class="itemImg" [src]="item.headImg" alt="logo" />
                 <div class="itemLeft">
@@ -91,7 +91,7 @@
         </div>
       </nz-tab>
     </nz-tabset>
-    <div class="toMore">点击加载更多</div>
+    <div class="toMore" (click)="toMore()">点击加载更多</div>
     <div class="flexCenter2">
       <nz-pagination
         [(nzPageIndex)]="current"
