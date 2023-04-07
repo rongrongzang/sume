@@ -60,7 +60,7 @@ export class ExhibitionComponent {
     }
     let _size = size * 3;
     this.brandList = this.toArr(mockData.brandList, _size);
-    this.ulWidth = Number((1.85 * size).toFixed(2));
+    this.ulWidth = window.innerWidth > 961 ? Number((1.85 * size).toFixed(2)) : Number((2.1 * size).toFixed(2));
     this.hotProductsList = window.innerWidth > 960 ? mockData.hotProductsList : mockData.hotProductsList.slice(0, 4);
   }
   // 转为二维数组

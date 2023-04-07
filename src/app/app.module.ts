@@ -16,6 +16,7 @@ import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FooterDescriptionComponent } from './components/footer-description/footer-description.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MenuMobileComponent } from './components/header/components/menu-mobile/menu-mobile.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -45,6 +46,7 @@ registerLocaleData(zh);
     SideBoxsComponent,
     TranslatePipe,
     MenuMobileComponent,
+    FooterDescriptionComponent,
   ],
   imports: [
     BrowserModule,

@@ -14,7 +14,7 @@ export class MenuMobileComponent implements OnInit {
   constructor(private router: Router) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        this.routeUrl = event.url === '/' ? '/exhibition-component' : event.url;
+        this.routeUrl = event.url === '/' ? '/exhibition-component' : event.url.split('?')[0];
         this.switchMenu(false);
       }
     });

@@ -52,7 +52,7 @@
         <li *ngFor="let item of tvList" class="tvItem" (click)="toDetail(item)">
           <div class="liveTag">
             <img src="https://cdn.sumecdtx.com/dtx_exhibition/assets/index/living.svg" class="liveTagImg" alt="" />
-            <div class="num">{{ item.cumulativeViewersNum }}</div>
+            <div class="num">{{ item.cumulativeViewersNum }}观看</div>
           </div>
           <img class="bannerImg" [src]="item.roomBanner" alt="banner" />
           <div class="textBox">

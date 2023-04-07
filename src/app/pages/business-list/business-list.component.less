@@ -14,16 +14,17 @@
   align-items: center;
   justify-content: center;
 }
-.noticeShow {
-  max-width: 14rem;
-  font-size: 0.14rem;
-  font-variant: tabular-nums;
-  line-height: 1.6;
-  padding: 0.2rem;
-  margin: 0 auto;
+// 移动端<650px显示 “点击加载更多”
+.toMore {
+  display: none;
 }
-.redText {
-  color: #e40101;
+.zanIconBrand {
+  width: 0.54rem;
+  height: 0.22rem;
+  position: absolute;
+  right: 0.15rem;
+  top: 0.15rem;
+  z-index: 100;
 }
 .zanIcon {
   width: 0.54rem;
@@ -48,6 +49,7 @@
     padding: 0.2rem;
     background: linear-gradient(88deg, #f6f8ff 0%, rgba(255, 255, 255, 0.2) 100%);
     z-index: 100;
+    overflow: hidden;
   }
   .item:nth-child(3n) {
     margin-right: 0;
@@ -71,6 +73,9 @@
     font-size: 0.18rem;
     font-weight: 700;
     color: #333;
+    .logoUrl {
+      display: none;
+    }
   }
   .subTitle {
     height: 0.4rem;
@@ -173,9 +178,6 @@
   }
 }
 @media screen and (max-width: 960px) {
-  .noticeShow {
-    color: #999;
-  }
   .hotProducts {
     .item {
       width: calc(50% - 0.24rem);
@@ -190,6 +192,7 @@
         }
         .itemLeft {
           width: 100%;
+          font-size: 0.28rem;
           .icon {
             margin-right: 0.2rem;
             width: 0.44rem;
@@ -216,5 +219,96 @@
     height: 0.6rem;
     top: 0.5rem;
     right: 0.28rem;
+  }
+}
+@media screen and (min-width: 650px) and (max-width: 959.98px) {
+  .zanIconBrand {
+    width: 0.6rem;
+    height: 0.26rem;
+    top: 0.1rem;
+    right: 0.1rem;
+  }
+  .brand {
+    .title {
+      margin-bottom: 0.4rem;
+    }
+  }
+}
+@media screen and (max-width: 650px) {
+  .zanIconBrand {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 1.44rem;
+    height: 0.6rem;
+  }
+  .brand {
+    .item {
+      width: 100%;
+      padding: 0.3rem 0.2rem;
+      margin: 0.2rem;
+      border: 1px solid #79acde;
+    }
+    .item:nth-child(3n) {
+      margin: 0.2rem;
+    }
+    .item:nth-child(2n) {
+      margin: 0.2rem;
+    }
+    .addressIcon {
+      width: 0.44rem;
+      height: 0.4rem;
+      margin: 0 0.18rem;
+    }
+    .addressP {
+      font-weight: 700;
+      color: #fb630b;
+      font-size: 0.4rem;
+    }
+    .countryStyle {
+      font-size: 0.4rem;
+      font-weight: 400;
+      line-height: 0.4rem;
+      color: #666;
+      padding: 0 0.42rem;
+      margin: 0.4rem 0;
+    }
+    .title {
+      font-size: 0.58rem;
+      font-weight: 700;
+      color: #333;
+      line-height: 0.6rem;
+      padding: 0.4rem 0 0 0.4rem;
+      margin-bottom: 0.4rem;
+      .logoUrl {
+        display: inline-block;
+        border-radius: 100%;
+        height: 0.88rem;
+        width: 0.88rem;
+        margin-right: 0.2rem;
+      }
+    }
+    .subTitle {
+      font-size: 0.4rem;
+      font-weight: 400;
+      color: #666;
+      padding: 0.2rem 0.42rem;
+      margin: 0 0.3rem 0.2rem 0;
+      height: 0.8rem;
+    }
+    .btnBox {
+      display: none;
+    }
+  }
+  .flexCenter2 {
+    display: none;
+  }
+  .toMore {
+    display: block;
+    color: #666;
+    font-size: 0.42rem;
+    font-weight: 400;
+    text-align: center;
+    margin: 0.4rem;
   }
 }
