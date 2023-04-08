@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { NzMessageService } from 'ng-zorro-antd/message';
 import { mockData } from '../../../mock/data';
 import { I18n } from '../../i18n';
 
@@ -15,7 +16,7 @@ export class HeaderComponent implements OnInit {
   headerObj = mockData.header;
   searchKey?: String;
   routeUrl?: String;
-  constructor(private router: Router) {
+  constructor(private router: Router, private message: NzMessageService) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.routeUrl = event.url === '/' ? '/exhibition-component' : event.url.split('?')[0];
@@ -29,6 +30,9 @@ export class HeaderComponent implements OnInit {
     } else if (openType === null) {
       window.open(url, '_blank');
     }
+  }
+  toLogin() {
+    this.message.create('error', `抱歉，登录页面建设中...`);
   }
   // visible控制菜单的显示与隐藏 - 数据双向绑定@input\@output
   switchMenu() {

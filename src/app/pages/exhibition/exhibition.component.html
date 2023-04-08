@@ -15,7 +15,7 @@
   <!-- 品牌名录 -->
   <div class="content productAndStoreHead">
     <div class="moreBox" style="margin-bottom: 0.2rem">
-      <div class="title">品牌名录</div>
+      <div class="title">{{ 'brand_list' | translate }}</div>
       <div class="more" (click)="toNext('business-list-component', 0)">{{ 'show_more' | translate }}</div>
     </div>
     <div class="mobileUl">
@@ -52,7 +52,7 @@
   <!-- 直播 -->
   <div class="content tv">
     <div class="moreBox">
-      <div class="title">直播</div>
+      <div class="title">{{ 'live' | translate }}</div>
       <div class="more" (click)="toNext('live-list-component')">{{ 'show_more' | translate }}</div>
     </div>
     <div>
@@ -80,7 +80,7 @@
   <!-- 热门商品 -->
   <div class="content hotProducts">
     <div class="moreBox">
-      <div class="title">热门商品</div>
+      <div class="title">{{ 'hot_product' | translate }}</div>
       <div class="more" (click)="toNext('business-list-component', 2)">{{ 'show_more' | translate }}</div>
     </div>
     <ul class="list">
@@ -113,10 +113,10 @@
   <!-- brand -->
   <div class="content brand">
     <div class="moreBox">
-      <div class="title">参展商名录</div>
+      <div class="title">{{ 'exhibitor_list' | translate }}</div>
       <div class="more" (click)="toNext('business-list-component', 1)">{{ 'show_more' | translate }}</div>
     </div>
-    <div class="despTitle">—— 排名不分先后 ——</div>
+    <div class="despTitle">—— {{ 'no_order' | translate }} ——</div>
     <nz-carousel nzEffect="scrollx" [nzLoop]="false">
       <div nz-carousel-content *ngFor="let itemArr of brandList">
         <div class="carouselBox">

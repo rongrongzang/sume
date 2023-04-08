@@ -7,7 +7,7 @@ export const mockData = {
     sponsorName: '宁波雅卓展览服务有限公司',
     menuResList: [
       {
-        menuNo: 'menu1',
+        menuNo: 'home',
         menuName: '首页',
         parentNo: '-1',
         menuType: 4,
@@ -21,7 +21,7 @@ export const mockData = {
         buttons: null,
       },
       {
-        menuNo: 'menu2',
+        menuNo: 'eproduct',
         menuName: '展商/展品',
         parentNo: '-1',
         menuType: 4,
@@ -35,7 +35,7 @@ export const mockData = {
         buttons: null,
       },
       {
-        menuNo: null,
+        menuNo: 'VR_video_exhibition',
         menuName: 'VR观展',
         parentNo: '-1',
         menuType: null,
@@ -49,7 +49,7 @@ export const mockData = {
         buttons: null,
       },
       {
-        menuNo: 'menu3',
+        menuNo: 'live',
         menuName: '直播',
         parentNo: '-1',
         menuType: 4,
@@ -63,7 +63,7 @@ export const mockData = {
         buttons: null,
       },
       {
-        menuNo: 'menu4',
+        menuNo: 'meeting',
         menuName: '洽谈',
         parentNo: '-1',
         menuType: 4,
@@ -77,7 +77,7 @@ export const mockData = {
         buttons: null,
       },
       {
-        menuNo: 'menu5',
+        menuNo: 'news_center',
         menuName: '新闻中心',
         parentNo: '-1',
         menuType: 4,

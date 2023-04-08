@@ -28,21 +28,24 @@
                 </div>
                 <div class="mobileBtns">
                   <div class="ellipsisShow textM">{{ item.startTimeStr }}</div>
-                  <div class="btn3M">订阅</div>
+                  <div class="btn3M">{{ 'subscribe' | translate }}</div>
                 </div>
               </div>
             </div>
             <div class="liveInfo">
               <div class="btns">
                 <div [class]="item.isLiving == 1 ? 'btn1 isLiving' : 'btn1 '">
-                  {{ item.isLiving == 1 ? '正在直播' : '直播预告' }}
+                  <span *ngIf="item.isLiving == 1; else elseBlock">{{ 'living' | translate }}</span>
+                  <ng-template #elseBlock>
+                    <span>{{ 'live_bord' | translate }}</span>
+                  </ng-template>
                 </div>
-                <div class="btn2" *ngIf="item.relationType == 2">回放</div>
+                <div class="btn2" *ngIf="item.relationType == 2">{{ 'play_back' | translate }}</div>
               </div>
               <div class="textBox">
                 <div class="textF ellipsisShow">{{ item.roomTitle }}</div>
                 <div class="textF ellipsisShow">{{ item.startTimeStr }}</div>
-                <div class="btn3">订阅</div>
+                <div class="btn3">{{ 'subscribe' | translate }}</div>
               </div>
             </div>
           </div>
@@ -52,16 +55,9 @@
   </div>
   <app-footer-description>
     <div>
-      <div>观看须知 ：</div>
-      <div>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        苏美达数字会展平台（以下简称会展平台）非以盈利为目的免费直播展商展台活动，其中有关参展商及其商品或服务的信息，均由会展平台参展商提供并由其对相关内容的真实性、准确性及合法性负责，会展平台仅负责收集、整理并发布，对其中内容不承担法律责任，请观众自行甄别。
-      </div>
-      <div>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        在观看过程中，如发现存在相关信息不真实、不准确或涉嫌违法违规的情况，请及时联系会展平台或相关行政主管部分进行举报，对于反映至会展平台的相关信息，我们将依照相关法律规定提醒相关单位整改。我们的联系方式：。
-        <span class="redText">T-world@sumec.com.cn</span>。
-      </div>
+      <div>{{ 'gkxz' | translate }}：</div>
+      <div class="textIndent">{{ 'yzbtb1' | translate }}</div>
+      <div class="textIndent">{{ 'yzbtb2' | translate }} <span class="redText">T-world@sumec.com.cn</span>。</div>
     </div>
   </app-footer-description>
 </div>
