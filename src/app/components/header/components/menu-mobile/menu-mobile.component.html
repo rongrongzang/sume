@@ -22,7 +22,7 @@
             [ngClass]="['text', routeUrl === item.menuRoute ? 'selected' : '']"
             (click)="switchRoute(item.menuRoute, item.openType)"
           >
-            {{ item.menuName }}
+            {{ item.menuNo | translate }}
           </button>
         </li>
       </ul>

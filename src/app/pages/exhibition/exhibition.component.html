@@ -23,7 +23,10 @@
         <li *ngFor="let arr of storeList" class="item">
           <nz-carousel nzAutoPlay nzDotPosition="right" nzEffect="flip" [nzDots]="false">
             <div nz-carousel-content *ngFor="let item of arr" class="bgItem">
-              <img [src]="item.logoUrl ? item.logoUrl : '../../../assets/nodata.svg'" alt="logo" />
+              <img
+                [src]="item.logoUrl ? item.logoUrl : 'https://rongrongzang.github.io/sume/assets/nodata.svg'"
+                alt="logo"
+              />
               <div>
                 <div class="text">{{ item.brandName }}</div>
                 <div class="subText">{{ item.countryName }}</div>
@@ -37,7 +40,10 @@
           <li *ngFor="let arr of storeListM" class="item">
             <ul class="list">
               <li *ngFor="let item of arr" class="item" [style]="'width:' + screenWidth / 2 + 'px'" class="bgItem">
-                <img [src]="item.logoUrl ? item.logoUrl : '../../../assets/nodata.svg'" alt="logo" />
+                <img
+                  [src]="item.logoUrl ? item.logoUrl : 'https://rongrongzang.github.io/sume/assets/nodata.svg'"
+                  alt="logo"
+                />
                 <div>
                   <div class="text">{{ item.brandName }}</div>
                   <div class="subText">{{ item.countryName }}</div>

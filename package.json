@@ -4,9 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --host 0.0.0.0 --port 4200",
-    "build": "ng build",
+    "build": "ng build --deploy-url /sume/  --base-href /sume/",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy": "gh-pages -d dist/sume-app"
   },
   "private": true,
   "dependencies": {
@@ -28,6 +29,7 @@
     "@angular/cli": "~15.2.4",
     "@angular/compiler-cli": "^15.2.0",
     "@types/jasmine": "~4.3.0",
+    "gh-pages": "^5.0.0",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",
