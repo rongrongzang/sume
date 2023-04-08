@@ -1,1 +1,18 @@
-<p>news-index works!</p>
+<div class="newIndex">
+  <div class="newsListBox">
+    <app-new-list [list]="newsList"></app-new-list>
+  </div>
+  <div class="mobile">
+    <div class="newsListBoxM" *ngFor="let item of newsList">
+      <img class="img" [src]="item.showImgUrl" alt="" />
+      <div class="title ellipsisShow">{{ item.newsTitle }}</div>
+    </div>
+  </div>
+  <div class="newTab">
+    <nz-tabset nzTabPosition="left">
+      <nz-tab *ngFor="let tabItem of newsTab" [nzTitle]="tabItem.tabName">
+        <app-new-list [list]="tabItem.newsList" [showDetail]="true"></app-new-list>
+      </nz-tab>
+    </nz-tabset>
+  </div>
+</div>

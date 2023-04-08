@@ -10,6 +10,7 @@ import { I18n } from '../../i18n';
 })
 export class HeaderComponent implements OnInit {
   @Input() screenWidth = 0;
+  public lang?: string = I18n.lang;
   public visible: boolean = false;
   headerObj = mockData.header;
   searchKey?: String;

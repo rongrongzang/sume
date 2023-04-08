@@ -1,0 +1,14 @@
+<div class="newList">
+  <div class="newItem" [style]="'width:' + width" *ngFor="let item of list">
+    <img class="newImg" [src]="item.showImgUrl" alt="" />
+    <div class="textBox">
+      <div class="title ellipsisShow2">{{ item.newsTitle }}</div>
+      <div class="subTitle ellipsisShow">{{ item.newsSubtitle }}</div>
+      <div class="btmBox">
+        <div class="detailBtn" (click)="toDetail(item.newsNo)">{{ showDetail ? '查看详情' : '' }}</div>
+        <div class="time">{{ item.releaseTime }}</div>
+      </div>
+    </div>
+    <img class="newImgM" [src]="item.showImgUrl" alt="" />
+  </div>
+</div>

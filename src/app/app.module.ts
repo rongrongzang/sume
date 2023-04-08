@@ -28,6 +28,7 @@ import { BusinessListComponent } from './pages/business-list/business-list.compo
 import { ExhibitionComponent } from './pages/exhibition/exhibition.component';
 import { LiveListComponent } from './pages/live-list/live-list.component';
 import { MeetingListComponent } from './pages/meeting-list/meeting-list.component';
+import { NewListComponent } from './pages/news-index/components/new-list/new-list.component';
 import { NewsIndexComponent } from './pages/news-index/news-index.component';
 import { PersonalCerterComponent } from './pages/personal-certer/personal-certer.component';
 import { TranslatePipe } from './pipes/translate.pipe';
@@ -51,6 +52,7 @@ registerLocaleData(zh);
     MenuMobileComponent,
     FooterDescriptionComponent,
     IfLoginModalComponent,
+    NewListComponent,
   ],
   imports: [
     BrowserModule,

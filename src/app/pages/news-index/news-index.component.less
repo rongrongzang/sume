@@ -1,0 +1,36 @@
+.newIndex {
+  .newTab {
+    max-width: 1200px;
+    padding: 0.3rem 0;
+    margin: 0 auto;
+  }
+}
+.mobile {
+  display: none;
+}
+@media screen and (max-width: 760px) {
+  .newsListBox {
+    display: none;
+  }
+  .mobile {
+    display: flex;
+    width: calc(100% - 12px);
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    .newsListBoxM {
+      flex-shrink: 0;
+      padding: 0.2rem 0 0.6rem 0.36rem;
+      .img {
+        width: 12.72rem;
+        height: 7.155rem;
+      }
+      .title {
+        max-width: 12.5rem;
+        margin: 0.4rem 0;
+        font-size: 0.56rem;
+        font-weight: 700;
+        color: #333;
+      }
+    }
+  }
+}

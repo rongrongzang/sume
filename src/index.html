@@ -9,34 +9,36 @@
       content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"
     />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <script>
+      setSize = () => {
+        let baseFontSize = 100;
+        let baseWidth = 1400;
+        let clientWidth = document.documentElement.clientWidth || window.innerWidth;
+        let containerWidth;
+        if (clientWidth >= 1920) {
+          containerWidth = 1400;
+        } else if (clientWidth >= 1280 && clientWidth < 1920) {
+          containerWidth = 1270;
+        } else if (clientWidth >= 960 && clientWidth < 1280) {
+          containerWidth = 1200;
+        } else {
+          containerWidth = clientWidth;
+        }
+        let rem = Math.floor((containerWidth / baseWidth) * baseFontSize * 100) / 100;
+        document.querySelector('html').style.fontSize = rem + 'px';
+      };
+      setSize();
+
+      window.onresize = () => {
+        setSize();
+      };
+    </script>
   </head>
   <body>
     <app-root></app-root>
   </body>
-  <script>
-    setSize = () => {
-      let baseFontSize = 100;
-      let baseWidth = 1400;
-      let clientWidth = document.documentElement.clientWidth || window.innerWidth;
-      let containerWidth;
-      if (clientWidth >= 1920) {
-        containerWidth = 1400;
-      } else if (clientWidth >= 1280 && clientWidth < 1920) {
-        containerWidth = 1270;
-      } else if (clientWidth >= 960 && clientWidth < 1280) {
-        containerWidth = 1200;
-      } else {
-        containerWidth = clientWidth;
-      }
-      let rem = Math.floor((containerWidth / baseWidth) * baseFontSize * 100) / 100;
-      document.querySelector('html').style.fontSize = rem + 'px';
-    };
-    setSize();
 
-    window.onresize = () => {
-      setSize();
-    };
-  </script>
   <style>
     body {
       font-family: Arial, 'Microsoft Yahei', 'Helvetica Neue', Helvetica, sans-serif;
